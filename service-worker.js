@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mhdalmasri/MemoList.git/precache-manifest.64d6e7ae1780e20a58892765f3a1aed2.js"
+  "/MemoList/precache-manifest.0ac4322af697ea24d80ffba34fe27392.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/mhdalmasri/MemoList.git/index.html", {
+workbox.routing.registerNavigationRoute("/MemoList/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
