@@ -16,3 +16,10 @@
 i{
   font-size: calc(50px + 10vmin);
 }
+button{ 
+  display: block;
+  cursor: pointer;
+  font-family: -apple-system;
+  font-weight: bold;
+ margin: 15px auto
+}

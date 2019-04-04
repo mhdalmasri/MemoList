@@ -5,7 +5,9 @@ import Itemslist from './Itemslist';
 export default class Memo extends Component {
   constructor(props){
     super(props)
-    this.state ={text: '',  items:[]}
+    this.localStorage=JSON.parse(localStorage.getItem('items'))
+    this.items=(this.localStorage !== null ? this.localStorage : [])
+    this.state ={text: '',  items:this.items}
   }
 
   
@@ -21,12 +23,15 @@ const newItem={
   id:Date.now(),
   text:this.state.text
 }
+const newItems=this.state.items.concat(newItem)
+
 this.setState(
   state => ({
-    items:state.items.concat(newItem),
+    items:newItems,
     text:''
   })
 )
+localStorage.setItem('items',JSON.stringify(newItems));
   }
 
   render() {
@@ -39,7 +44,7 @@ this.setState(
         
         <form onSubmit={this.handleSubmit}>
 
-          <input type="text" id="listItem" onChange={this.handleChange} value={this.state.text}></input>
+          <input type="text" id="listItem" onChange={this.handleChange} value={this.state.text} required></input>
 
           <button>Add # {this.state.items.length+1}</button>
 
